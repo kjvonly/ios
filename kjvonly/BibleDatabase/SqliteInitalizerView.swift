@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct SqliteInitalizerView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
@@ -33,7 +33,7 @@ struct ContentView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: {}) {
+                    Button(action: PreloadSqliteDatabase) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
