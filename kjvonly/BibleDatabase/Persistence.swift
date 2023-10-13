@@ -36,8 +36,8 @@ struct PersistenceController {
     
     
     init(inMemory: Bool = false) {
-        var path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        var url = URL(fileURLWithPath: path + "/kjvonly.sqlite")      // var getImagePath = paths.("filename")
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = URL(fileURLWithPath: path + "/kjvonly.sqlite")      // var getImagePath = paths.("filename")
         
         
         if !FileManager.default.fileExists(atPath: url.path) {
@@ -45,17 +45,17 @@ struct PersistenceController {
                 fatalError("Failed to find kjvonly.sqlite")
             }
             
-            var destSqlite = URL(fileURLWithPath: path + "/kjvonly.sqlite")
+            let destSqlite = URL(fileURLWithPath: path + "/kjvonly.sqlite")
             
             guard let shm = Bundle.main.url(forResource: "kjvonly", withExtension: "sqlite-shm") else {
                 fatalError("Failed to find kjvonly.sqlite-shm")
             }
-                var destShm = URL(fileURLWithPath: path + "/kjvonly.sqlite-shm")
+            let destShm = URL(fileURLWithPath: path + "/kjvonly.sqlite-shm")
    
             guard let wal = Bundle.main.url(forResource: "kjvonly", withExtension: "sqlite-wal") else {
                 fatalError("Failed to find kjvonly.sqlite-wal")
             }
-            var destWal = URL(fileURLWithPath: path + "/kjvonly.sqlite-wal")
+            let destWal = URL(fileURLWithPath: path + "/kjvonly.sqlite-wal")
             
             for f in [(sqlite, destSqlite), (shm, destShm), (wal, destWal)] {
                 do
