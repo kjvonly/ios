@@ -13,7 +13,7 @@ class BibleRepository {
         self.bibleDao = bibleDao
     }
     
-    func GetObjectById(id: String){
+   func GetObjectById(id: String){
         let chapterDao = bibleDao.GetChapterById(id: id)
         let decompressedData =  (chapterDao.data as NSData).gunzipped()
         let json = String(data: decompressedData ??  Data(), encoding: .utf8)
