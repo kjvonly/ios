@@ -6,20 +6,18 @@
 //
 // https://www.hackingwithswift.com/example-code/system/how-to-compress-and-decompress-data
 import Foundation
-
+import GZIP
 class BibleRepository {
+    var bibleDao: BibleDao
+    init (bibleDao: BibleDao){
+        self.bibleDao = bibleDao
+    }
+    
     func GetObjectById(id: String){
-        
-        // Get the managed object ID of the object
-        let managedObject = // ... an NSManagedObject
-        let managedObjectID = managedObject.objectID
-
-        // Get a reference to a NSManagedObjectContext
-        let context = persistentContainer.viewContext
-
-        // Get the object by ID from the NSManagedObjectContext
-        let object = try context.existingObject(
-            with: managedObjectID
-        )
+        let chapterDao = bibleDao.GetChapterById(id: id)
+        let decompressedData =  (chapterDao.data as NSData).gunzipped()
+        let json = String(data: decompressedData ??  Data(), encoding: .utf8)
+        if (decompressedData != nil ){
+        }
     }
 }

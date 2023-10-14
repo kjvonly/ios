@@ -35,7 +35,9 @@ struct BibleView: View {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: {}) {
+                    Button(action: {
+                        bibleViewModel.GetChapter()
+                    }) {
                         Label("Add Item", systemImage: "plus")
                     }
                 }
@@ -68,5 +70,5 @@ private let itemFormatter: DateFormatter = {
 }()
 
 #Preview {
-    BibleView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    BibleView(bibleViewModel: BibleViewModel(bibleRepository: BibleRepository(bibleDao: BibleDao()))).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }

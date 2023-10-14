@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Chapter {
+class ChapterDao {
     var id: String
     var data: Data
 

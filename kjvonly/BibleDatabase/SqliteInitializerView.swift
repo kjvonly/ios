@@ -112,5 +112,5 @@ private let itemFormatter: DateFormatter = {
 }()
 
 #Preview {
-    BibleView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    SqliteInitalizerView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
