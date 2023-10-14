@@ -24,6 +24,7 @@
 		6D1C88222ADA1409006C4004 /* BibleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C88212ADA1409006C4004 /* BibleRepository.swift */; };
 		6D1C88252ADA1730006C4004 /* BibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C88242ADA1730006C4004 /* BibleViewModel.swift */; };
 		6D1C88272ADA1ADB006C4004 /* BibleDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C88262ADA1ADB006C4004 /* BibleDao.swift */; };
+		6D1C882A2ADA2159006C4004 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 6D1C88292ADA2159006C4004 /* SQLite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D1C882A2ADA2159006C4004 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +199,9 @@
 			dependencies = (
 			);
 			name = kjvonly;
+			packageProductDependencies = (
+				6D1C88292ADA2159006C4004 /* SQLite */,
+			);
 			productName = kjvonly;
 			productReference = 6D1C87D42AD88EBF006C4004 /* kjvonly.app */;
 			productType = "com.apple.product-type.application";
@@ -269,6 +274,9 @@
 				Base,
 			);
 			mainGroup = 6D1C87CB2AD88EBF006C4004;
+			packageReferences = (
+				6D1C88282ADA2159006C4004 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = 6D1C87D52AD88EBF006C4004 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -646,6 +654,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6D1C88282ADA2159006C4004 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6D1C88292ADA2159006C4004 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D1C88282ADA2159006C4004 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6D1C87E22AD88EC0006C4004 /* kjvonly.xcdatamodeld */ = {
