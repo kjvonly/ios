@@ -29,6 +29,7 @@
 		6D1C88312ADACFB5006C4004 /* GZIP in Frameworks */ = {isa = PBXBuildFile; productRef = 6D1C88302ADACFB5006C4004 /* GZIP */; };
 		6D1C88352ADADDFC006C4004 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C88342ADADDFC006C4004 /* Chapter.swift */; };
 		6D1C88372ADB04DF006C4004 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C88362ADB04DF006C4004 /* SplashScreenView.swift */; };
+		6D1C883A2ADB3B9C006C4004 /* ThemeModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C88392ADB3B9C006C4004 /* ThemeModeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		6D1C882D2ADAABEB006C4004 /* ChapterDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDao.swift; sourceTree = "<group>"; };
 		6D1C88342ADADDFC006C4004 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		6D1C88362ADB04DF006C4004 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		6D1C88392ADB3B9C006C4004 /* ThemeModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			children = (
 				6D1C881A2ADA0D6E006C4004 /* BibleView.swift */,
 				6D1C88242ADA1730006C4004 /* BibleViewModel.swift */,
+				6D1C88392ADB3B9C006C4004 /* ThemeModeView.swift */,
 			);
 			path = BibleUi;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				6D1C88252ADA1730006C4004 /* BibleViewModel.swift in Sources */,
 				6D1C87E12AD88EC0006C4004 /* Persistence.swift in Sources */,
 				6D1C88372ADB04DF006C4004 /* SplashScreenView.swift in Sources */,
+				6D1C883A2ADB3B9C006C4004 /* ThemeModeView.swift in Sources */,
 				6D1C882E2ADAABEB006C4004 /* ChapterDao.swift in Sources */,
 				6D1C88272ADA1ADB006C4004 /* BibleDao.swift in Sources */,
 				6D1C881B2ADA0D6E006C4004 /* BibleView.swift in Sources */,

@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+
 struct BibleView: View {
     let vm: BibleViewModel
     
@@ -26,18 +27,22 @@ struct BibleView: View {
                 }.padding()
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: {
-                        vm.GetChapter()
-                    }) {
-                        Label("Add Item", systemImage: "plus")
+                
+                ToolbarItem(placement: .topBarLeading) {
+                    HStack {
+                        Image("icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                        Spacer()
                     }
                 }
+                ToolbarItem {
+                    
+                }
+                ToolbarItem {
+                    ThemeModeView()
+                }
             }
-            Text("Select an item")
         }
     }
 }
