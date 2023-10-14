@@ -27,3 +27,6 @@ struct Chapter: Codable {
     let verseMap: Dictionary<Int, String>
     let footnotes: Dictionary<Int, String>?
 }
+
+let NullChapter: Chapter = Chapter(number: -1, bookName: "", verses: Dictionary<Int, Verse>(), verseMap: Dictionary<Int, String>(), footnotes: nil)
+

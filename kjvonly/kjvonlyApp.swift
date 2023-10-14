@@ -17,7 +17,7 @@ struct kjvonlyApp: App {
             let bdao: BibleDao = BibleDao()
             let br: BibleRepository = BibleRepository(bibleDao: bdao)
             let bvm:            BibleViewModel = BibleViewModel(bibleRepository: br)
-            BibleView(bibleViewModel: bvm)
+            BibleView(vm: bvm)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
