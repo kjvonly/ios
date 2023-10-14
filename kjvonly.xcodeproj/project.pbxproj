@@ -129,9 +129,9 @@
 				6D1C88062AD89C85006C4004 /* BibleDatabase */,
 				6D1C88232ADA16CD006C4004 /* BibleUi */,
 				6D1C87D72AD88EBF006C4004 /* kjvonlyApp.swift */,
+				6D1C88362ADB04DF006C4004 /* SplashScreenView.swift */,
 				6D1C87DB2AD88EC0006C4004 /* Assets.xcassets */,
 				6D1C87DD2AD88EC0006C4004 /* Preview Content */,
-				6D1C88362ADB04DF006C4004 /* SplashScreenView.swift */,
 			);
 			path = kjvonly;
 			sourceTree = "<group>";
