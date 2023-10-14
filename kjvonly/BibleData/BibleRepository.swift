@@ -9,15 +9,23 @@ import Foundation
 import GZIP
 class BibleRepository {
     var bibleDao: BibleDao
+    let decoder = JSONDecoder()
     init (bibleDao: BibleDao){
         self.bibleDao = bibleDao
     }
     
-   func GetObjectById(id: String){
+    func GetObjectById(id: String) -> Chapter? {
+        var chapter: Chapter?
         let chapterDao = bibleDao.GetChapterById(id: id)
         let decompressedData =  (chapterDao.data as NSData).gunzipped()
         let json = String(data: decompressedData ??  Data(), encoding: .utf8)
-        if (decompressedData != nil ){
+        if (json != nil ){
+            do {
+              chapter = try self.decoder.decode(Chapter.self,  from: decompressedData ??  Data())
+            }catch let error {
+                print("error decoding json for \(id): error: \(error)")
+            }
         }
+        return chapter
     }
 }

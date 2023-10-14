@@ -8,22 +8,22 @@
 import Foundation
 
 struct Words: Codable {
-    var text: String
-    var `class`:  Array<String>
-    var href: Array<String>
-    var emphasis: Bool
+    let text: String
+    let `class`:  Array<String>?
+    let href: Array<String>?
+    let emphasis: Bool
 }
 
 struct Verse: Codable {
-    var number: Int
-    var words: Words
-    var text: String
+    let number: Int
+    let words: Array<Words>
+    let text: String
 }
 
 struct Chapter: Codable {
-    var number: Int
-    var bookName: String
-    var verses: Dictionary<Int, Verse>
-    var verseMap: Dictionary<Int, String>
-    var footnotes: Dictionary<Int, String>
+    let number: Int
+    let bookName: String
+    let verses: Dictionary<Int, Verse>
+    let verseMap: Dictionary<Int, String>
+    let footnotes: Dictionary<Int, String>?
 }
