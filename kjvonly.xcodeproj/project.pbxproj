@@ -19,7 +19,11 @@
 		6D1C88172AD8B653006C4004 /* kjvonly.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 6D1C88142AD8B653006C4004 /* kjvonly.sqlite-wal */; };
 		6D1C88182AD8B653006C4004 /* kjvonly.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 6D1C88152AD8B653006C4004 /* kjvonly.sqlite */; };
 		6D1C88192AD8B653006C4004 /* kjvonly.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 6D1C88162AD8B653006C4004 /* kjvonly.sqlite-shm */; };
-		6D1C881B2ADA0D6E006C4004 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C881A2ADA0D6E006C4004 /* ContentView.swift */; };
+		6D1C881B2ADA0D6E006C4004 /* BibleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C881A2ADA0D6E006C4004 /* BibleView.swift */; };
+		6D1C881F2ADA12D0006C4004 /* 1_1.json.gz in Resources */ = {isa = PBXBuildFile; fileRef = 6D1C881E2ADA12D0006C4004 /* 1_1.json.gz */; };
+		6D1C88222ADA1409006C4004 /* BibleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C88212ADA1409006C4004 /* BibleRepository.swift */; };
+		6D1C88252ADA1730006C4004 /* BibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C88242ADA1730006C4004 /* BibleViewModel.swift */; };
+		6D1C88272ADA1ADB006C4004 /* BibleDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C88262ADA1ADB006C4004 /* BibleDao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +59,11 @@
 		6D1C88142AD8B653006C4004 /* kjvonly.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "kjvonly.sqlite-wal"; sourceTree = "<group>"; };
 		6D1C88152AD8B653006C4004 /* kjvonly.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = kjvonly.sqlite; sourceTree = "<group>"; };
 		6D1C88162AD8B653006C4004 /* kjvonly.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "kjvonly.sqlite-shm"; sourceTree = "<group>"; };
-		6D1C881A2ADA0D6E006C4004 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6D1C881A2ADA0D6E006C4004 /* BibleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleView.swift; sourceTree = "<group>"; };
+		6D1C881E2ADA12D0006C4004 /* 1_1.json.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = 1_1.json.gz; sourceTree = "<group>"; };
+		6D1C88212ADA1409006C4004 /* BibleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleRepository.swift; sourceTree = "<group>"; };
+		6D1C88242ADA1730006C4004 /* BibleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleViewModel.swift; sourceTree = "<group>"; };
+		6D1C88262ADA1ADB006C4004 /* BibleDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleDao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +114,10 @@
 		6D1C87D62AD88EBF006C4004 /* kjvonly */ = {
 			isa = PBXGroup;
 			children = (
+				6D1C88202ADA13C6006C4004 /* BibleData */,
 				6D1C88062AD89C85006C4004 /* BibleDatabase */,
+				6D1C88232ADA16CD006C4004 /* BibleUi */,
 				6D1C87D72AD88EBF006C4004 /* kjvonlyApp.swift */,
-				6D1C881A2ADA0D6E006C4004 /* ContentView.swift */,
 				6D1C87DB2AD88EC0006C4004 /* Assets.xcassets */,
 				6D1C87DD2AD88EC0006C4004 /* Preview Content */,
 			);
@@ -143,14 +152,33 @@
 		6D1C88062AD89C85006C4004 /* BibleDatabase */ = {
 			isa = PBXGroup;
 			children = (
+				6D1C881E2ADA12D0006C4004 /* 1_1.json.gz */,
 				6D1C87D92AD88EBF006C4004 /* SqliteInitializerView.swift */,
 				6D1C88152AD8B653006C4004 /* kjvonly.sqlite */,
 				6D1C88162AD8B653006C4004 /* kjvonly.sqlite-shm */,
 				6D1C88142AD8B653006C4004 /* kjvonly.sqlite-wal */,
 				6D1C87E22AD88EC0006C4004 /* kjvonly.xcdatamodeld */,
 				6D1C87E02AD88EC0006C4004 /* Persistence.swift */,
+				6D1C88262ADA1ADB006C4004 /* BibleDao.swift */,
 			);
 			path = BibleDatabase;
+			sourceTree = "<group>";
+		};
+		6D1C88202ADA13C6006C4004 /* BibleData */ = {
+			isa = PBXGroup;
+			children = (
+				6D1C88212ADA1409006C4004 /* BibleRepository.swift */,
+			);
+			path = BibleData;
+			sourceTree = "<group>";
+		};
+		6D1C88232ADA16CD006C4004 /* BibleUi */ = {
+			isa = PBXGroup;
+			children = (
+				6D1C881A2ADA0D6E006C4004 /* BibleView.swift */,
+				6D1C88242ADA1730006C4004 /* BibleViewModel.swift */,
+			);
+			path = BibleUi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D1C88192AD8B653006C4004 /* kjvonly.sqlite-shm in Resources */,
+				6D1C881F2ADA12D0006C4004 /* 1_1.json.gz in Resources */,
 				6D1C88182AD8B653006C4004 /* kjvonly.sqlite in Resources */,
 				6D1C88172AD8B653006C4004 /* kjvonly.sqlite-wal in Resources */,
 				6D1C87DF2AD88EC0006C4004 /* Preview Assets.xcassets in Resources */,
@@ -286,8 +315,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D1C88222ADA1409006C4004 /* BibleRepository.swift in Sources */,
+				6D1C88252ADA1730006C4004 /* BibleViewModel.swift in Sources */,
 				6D1C87E12AD88EC0006C4004 /* Persistence.swift in Sources */,
-				6D1C881B2ADA0D6E006C4004 /* ContentView.swift in Sources */,
+				6D1C88272ADA1ADB006C4004 /* BibleDao.swift in Sources */,
+				6D1C881B2ADA0D6E006C4004 /* BibleView.swift in Sources */,
 				6D1C87E42AD88EC0006C4004 /* kjvonly.xcdatamodeld in Sources */,
 				6D1C87DA2AD88EBF006C4004 /* SqliteInitializerView.swift in Sources */,
 				6D1C87D82AD88EBF006C4004 /* kjvonlyApp.swift in Sources */,

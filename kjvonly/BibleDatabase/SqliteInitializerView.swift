@@ -56,7 +56,7 @@ struct SqliteInitalizerView: View {
     private func PreloadSqliteDatabase() {
         withAnimation {
             guard let urls = Bundle.main.urls(forResourcesWithExtension: "json.gz", subdirectory: "json.gz") else {
-                fatalError("Failed to find users.json")
+                fatalError("Failed to find json.gz subdirectory")
             }
             
             for  url in urls   {
@@ -112,5 +112,5 @@ private let itemFormatter: DateFormatter = {
 }()
 
 #Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    BibleView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }

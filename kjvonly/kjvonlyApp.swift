@@ -11,10 +11,12 @@ import SwiftData
 @main
 struct kjvonlyApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            var br: BibleRepository = BibleRepository()
+            var bvm:            BibleViewModel = BibleViewModel(bibleRepository: br)
+            BibleView(bibleViewModel: bvm)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

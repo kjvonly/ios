@@ -13,14 +13,18 @@ struct PersistenceController {
     static let shared = PersistenceController()
     
     static var preview: PersistenceController = {
+        guard let url = Bundle.main.url(forResource: "1_1", withExtension: "json.gz") else {
+            fatalError("Failed to find 1_1.json")
+        }
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Bible(context: viewContext)
-            newItem.id = "string"
-            newItem.data = Data()
-        }
+        
+        let newItem = Bible(context: viewContext)
+        newItem.id = "1_1.json.gz"
+
+        
         do {
+            newItem.data = try Data(contentsOf: url)
             try viewContext.save()
         } catch {
             // Replace this implementation with code to handle the error appropriately.
@@ -51,7 +55,7 @@ struct PersistenceController {
                 fatalError("Failed to find kjvonly.sqlite-shm")
             }
             let destShm = URL(fileURLWithPath: path + "/kjvonly.sqlite-shm")
-   
+            
             guard let wal = Bundle.main.url(forResource: "kjvonly", withExtension: "sqlite-wal") else {
                 fatalError("Failed to find kjvonly.sqlite-wal")
             }
@@ -66,7 +70,7 @@ struct PersistenceController {
                 }
             }
         }
-
+        
         container = NSPersistentContainer(name: "kjvonly")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
