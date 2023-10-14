@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct SqliteInitalizerView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
@@ -56,7 +56,7 @@ struct ContentView: View {
     private func PreloadSqliteDatabase() {
         withAnimation {
             guard let urls = Bundle.main.urls(forResourcesWithExtension: "json.gz", subdirectory: "json.gz") else {
-                fatalError("Failed to find users.json")
+                fatalError("Failed to find json.gz subdirectory")
             }
             
             for  url in urls   {
@@ -112,5 +112,5 @@ private let itemFormatter: DateFormatter = {
 }()
 
 #Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    SqliteInitalizerView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
