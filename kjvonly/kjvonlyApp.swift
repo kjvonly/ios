@@ -14,8 +14,8 @@ struct kjvonlyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            var br: BibleRepository = BibleRepository()
-            var bvm:            BibleViewModel = BibleViewModel(bibleRepository: br)
+            let br: BibleRepository = BibleRepository()
+            let bvm:            BibleViewModel = BibleViewModel(bibleRepository: br)
             BibleView(bibleViewModel: bvm)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
