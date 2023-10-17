@@ -24,29 +24,17 @@ struct BibleView: View {
                             Spacer()
                         }
                     }
-                }.padding()
-            }
-            .toolbar {
-                
-                ToolbarItem(placement: .topBarLeading) {
-                    HStack {
-                        Image("icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                        Spacer()
-                    }
-                }
-                ToolbarItem {
-                    
-                }
-                ToolbarItem {
-                    ThemeModeView()
                 }
             }
+            .padding()
+            .toolbar(){
+                BibleToolbarView()
+            }
+            .navigationBarTitle("", displayMode: .inline)
         }
     }
 }
 
 #Preview {
-    BibleView(vm: BibleViewModel(bibleRepository: BibleRepository(bibleDao: BibleDao()))).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    BibleView(vm: BibleViewModel(bibleRepository: BibleRepositoryFake()))
 }

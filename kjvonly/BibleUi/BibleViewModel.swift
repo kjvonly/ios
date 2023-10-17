@@ -9,13 +9,13 @@ import Foundation
 import SQLite3
 
 class BibleViewModel {
-    var bibleRepository: BibleRepository
+    var bibleRepository: BibleRepositoryProtocol
     var currentChapter: Chapter = NullChapter
     var verses = Array<(key: Int, value: String)>()
-    init(bibleRepository :BibleRepository) {
+    init(bibleRepository: BibleRepositoryProtocol) {
         self.bibleRepository = bibleRepository
         Task {
-            self.currentChapter =  self.bibleRepository.GetObjectById(id: "50_3.json.gz")
+            self.currentChapter =  self.bibleRepository.GetObjectById(id: "1_1.json.gz")
             self.verses = self.currentChapter.verseMap.sorted(by: <)
         }
     }

@@ -7,7 +7,11 @@
 // https://www.hackingwithswift.com/example-code/system/how-to-compress-and-decompress-data
 import Foundation
 import GZIP
-class BibleRepository {
+protocol BibleRepositoryProtocol {
+    func GetObjectById(id: String) -> Chapter
+}
+
+class BibleRepository : BibleRepositoryProtocol {
     var bibleDao: BibleDao
     
     let decoder = JSONDecoder()
