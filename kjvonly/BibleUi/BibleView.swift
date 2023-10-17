@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+
 struct BibleView: View {
     let vm: BibleViewModel
     
@@ -23,25 +24,17 @@ struct BibleView: View {
                             Spacer()
                         }
                     }
-                }.padding()
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: {
-                        vm.GetChapter()
-                    }) {
-                        Label("Add Item", systemImage: "plus")
-                    }
                 }
             }
-            Text("Select an item")
+            .padding()
+            .toolbar(){
+                BibleToolbarView()
+            }
+            .navigationBarTitle("", displayMode: .inline)
         }
     }
 }
 
 #Preview {
-    BibleView(vm: BibleViewModel(bibleRepository: BibleRepository(bibleDao: BibleDao()))).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    BibleView(vm: BibleViewModel(bibleRepository: BibleRepositoryFake()))
 }
